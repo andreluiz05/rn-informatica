@@ -1,66 +1,51 @@
-# RN Informática — Site Oficial
+<div align="center">
+  <img src="./assets/imagens/marca/Logo%20RN%20Inform%C3%A1tica%20em%20Vetor.png" alt="Logo RN Informática" width="220" />
 
-Site institucional e de serviços da **RN Informática** (Igarassu - PE), desenvolvido com HTML5 semântico, CSS3 moderno e JavaScript puro (sem dependências externas de compilação).
+  # 💻 RN Informática — Site Oficial
 
-## Estrutura do Projeto
+  **Assistência Técnica Especializada em Notebooks, PC Gamer, Redes, CFTV e Elétrica em Igarassu - PE** 🚀
+</div>
+
+---
+
+## 🛠️ Sobre o Projeto
+
+Site institucional moderno, rápido e responsivo da **RN Informática**, focado em conversão direta via WhatsApp, SEO Local e acessibilidade (**WCAG 2.2 AA**).
+
+- ⚡ **Stack pura e leve:** HTML5 semântico + CSS3 modular + JavaScript Vanilla
+- 📱 **100% Responsivo:** Desktop, Tablet e Mobile (menu *frosted glass*, lightbox e filtros interativos)
+- 🤖 **Assistente Virtual:** Mascote interativo com respostas rápidas e triagem automática para o WhatsApp
+- 🔍 **SEO & Performance:** Dados estruturados (`LocalBusiness` + `FAQPage`), Open Graph e imagens em `.webp`
+
+---
+
+## 📂 Estrutura Principal
 
 ```text
 rn-informatica/
-├── index.html
-├── README.md
-├── docs/
-│   └── design-system.md  # Guia visual e de interação
-└── assets/
-    ├── css/
-    │   ├── styles.css       # Entrada e ordem de importação
-    │   ├── base.css         # Tokens, reset e tipografia
-    │   ├── components.css   # Cabeçalho, navegação e botões
-    │   ├── sections.css     # Seções, formulário e lightbox
-    │   ├── responsive.css   # Breakpoints e movimento reduzido
-    │   └── help.css         # Mascote e painel de dúvidas
-    ├── js/
-    │   └── main.js
-    └── imagens/
-        ├── marca/
-        │   ├── logo-rn-informatica.webp
-        │   ├── perfil-instagram-robson-nunes.webp
-        │   └── mascote-rn.png
-        ├── hero/
-        │   └── hero-pc-rn-v2.jpg
-        ├── galeria/
-        │   ├── bancada-computador-gamer-branco-aquario.webp
-        │   ├── bancada-computador-gamer-preto-rgb.webp
-        │   └── computador-gamer-destaque.webp
-        └── servicos/
-            ├── servico-cftv-alarmes-intelbras.webp
-            ├── servico-comercios-escolas.webp
-            ├── servico-computador-gamer-manutencao.webp
-            ├── servico-eletricista-predial.webp
-            ├── servico-geral-apresentacao.webp
-            ├── servico-notebook-fonte-carregador.webp
-            ├── servico-notebook-manutencao.webp
-            ├── servico-notebook-reparo-base.webp
-            └── servico-redes-computadores.webp
+├── index.html            # Página principal
+├── assets/
+│   ├── css/              # Estilos modulares (base, components, sections, help, responsive)
+│   ├── js/main.js        # Interações, filtros, lightbox, orçamento e mascote
+│   └── imagens/          # Artes e fotos otimizadas (.webp / .png)
+├── docs/design-system.md # Guia visual da marca
+├── robots.txt            # Diretivas de indexação
+└── site.webmanifest      # Manifesto web
 ```
 
-## Canais Oficiais Integrados
+---
 
-- **WhatsApp (Direto):** `https://wa.me/5581987289955` — `(81) 98728-9955`
-- **Instagram:** `https://www.instagram.com/rn.informatica.pe/`
-- **Facebook:** `https://www.facebook.com/rninfor.tec`
-- **Localização (Google Maps):** `https://goo.gl/maps/wkNYAStm881WDxYA9`
-- **Parceiros:** `https://linktr.ee/Rninfor`
-- **Linktree Oficial:** `https://linktr.ee/rninformatica`
-- **E-mail:** `rninfor.tec@gmail.com`
+## 📞 Canais Oficiais
 
-## Como Visualizar
+- 💬 **WhatsApp:** [(81) 98728-9955](https://wa.me/5581987289955)
+- 📸 **Instagram:** [@rn.informatica.pe](https://www.instagram.com/rn.informatica.pe/)
+- 👍 **Facebook:** [/rninfor.tec](https://www.facebook.com/rninfor.tec)
+- 📍 **Localização:** [Cruz de Rebouças, Igarassu - PE](https://goo.gl/maps/wkNYAStm881WDxYA9)
+- 🔗 **Linktree:** [linktr.ee/rninformatica](https://linktr.ee/rninformatica)
+- ✉️ **E-mail:** `rninfor.tec@gmail.com`
 
-O guia visual está em [docs/design-system.md](docs/design-system.md). A pasta `.agents` contém as instruções de trabalho das ferramentas e não faz parte do site publicado. A imagem `servico-geral-apresentacao.webp` é uma arte de reserva, preservada para uso futuro.
+---
 
-O mascote no canto inferior direito abre um painel de dúvidas com respostas pré-definidas e contato contextual pelo WhatsApp. Não depende de API ou chatbot externo. As respostas ficam em `iniciarAjuda`, em `assets/js/main.js`, e os estilos em `assets/css/help.css`. A imagem utilizada está em `assets/imagens/marca/mascote-rn.png`.
+## ▶️ Como Executar
 
-Para ajustar cores e tipografia, edite `assets/css/base.css`. Para mudar o layout de uma seção, use `sections.css`; ajustes por tamanho de tela ficam em `responsive.css`. Preserve a ordem de importação em `styles.css`.
-
-Os filtros usam botões com estado pressionado e contagem anunciada. O menu fecha com Escape; a ampliação mantém o foco no diálogo e devolve ao botão original ao fechar. O formulário prepara uma mensagem para revisão e envio pelo próprio visitante no WhatsApp.
-
-Abra o arquivo `index.html` diretamente em qualquer navegador moderno ou publique a pasta em qualquer serviço de hospedagem estática (Netlify, Vercel, Cloudflare Pages, GitHub Pages).
+Basta abrir o arquivo `index.html` no navegador ou publicar a pasta em qualquer serviço de hospedagem estática (**GitHub Pages**, **Vercel**, **Netlify** ou **Cloudflare Pages**). 🌐
