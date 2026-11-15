@@ -1,0 +1,155 @@
+/* Mascote e respostas rápidas. O painel abre somente por escolha do visitante. */
+.help-widget {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 45;
+}
+
+.help-launcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  animation: help-launcher-enter 500ms ease-out both;
+}
+
+@keyframes help-launcher-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.help-launcher img {
+  width: 76px;
+  height: 102px;
+  object-fit: contain;
+  animation: mascot-float 3.2s ease-in-out 500ms infinite;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.help-launcher span {
+  position: relative;
+  padding: 10px 14px;
+  background: white;
+  color: var(--graphite);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  box-shadow: 0 3px 12px #0000000d;
+  font-size: 14px;
+  font-weight: 600;
+  animation: mascot-float 3.2s ease-in-out 500ms infinite;
+}
+
+.help-launcher span::after {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-top: 1px solid var(--line-strong);
+  border-right: 1px solid var(--line-strong);
+  content: "";
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.help-panel {
+  width: min(360px, calc(100vw - 32px));
+  max-height: calc(100dvh - 140px);
+  overflow-y: auto;
+  margin-bottom: 12px;
+  background: white;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px #00000024;
+}
+
+.help-panel__header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--bg-surface); }
+.help-panel__header h2 { font-size: 20px; }
+.help-panel__header p { margin-top: 4px; font-size: 12px; color: var(--ink-muted); }
+.help-close { flex-shrink: 0; width: 44px; height: 44px; border: 0; background: transparent; font-size: 28px; cursor: pointer; }
+.help-panel__body { padding: 18px; font-size: 14px; color: var(--ink-body); }
+.help-questions { display: grid; gap: 8px; margin: 16px 0; }
+.help-questions button { min-height: 44px; text-align: left; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 5px; background: white; cursor: pointer; }
+.help-questions button:hover, .help-questions button[aria-pressed="true"] { border-color: var(--brand); color: var(--brand); }
+.help-answer { padding: 14px; margin-bottom: 16px; background: var(--bg-surface); border-left: 3px solid var(--brand); }
+.help-panel .btn { font-size: 13px; padding: 10px; }
+.help-more { display: block; margin-top: 12px; text-align: center; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .help-launcher,
+  .help-launcher img,
+  .help-launcher span { animation: none; }
+}
+
+@media (max-width: 1080px) {
+  .help-widget {
+    right: 16px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .help-launcher img {
+    width: 62px;
+    height: 84px;
+  }
+
+  .help-launcher span {
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .help-widget {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .help-launcher {
+    gap: 6px;
+  }
+
+  .help-launcher img {
+    width: 50px;
+    height: 68px;
+  }
+
+  .help-launcher span {
+    display: inline-block;
+    padding: 7px 11px;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .help-panel {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 88px;
+    width: auto;
+    max-width: 380px;
+    max-height: calc(100dvh - 112px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .help-launcher img {
+    width: 44px;
+    height: 60px;
+  }
+
+  .help-launcher span {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+}

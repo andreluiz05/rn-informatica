@@ -1,0 +1,17 @@
+{
+  "name": "RN Informática — Assistência Técnica e Soluções em TI",
+  "short_name": "RN Informática",
+  "description": "Manutenção de computadores e notebooks, montagem de PC Gamer, redes cabeadas e Wi-Fi, CFTV Intelbras e elétrica predial em Igarassu - PE.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c9331a",
+  "icons": [
+    {
+      "src": "./assets/imagens/marca/logo-rn-informatica.webp",
+      "sizes": "600x600",
+      "type": "image/webp"
+    }
+  ]
+}
