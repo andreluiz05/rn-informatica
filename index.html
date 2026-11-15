@@ -669,7 +669,6 @@
           <figcaption>Robson Nunes · RN Informática </figcaption>
         </figure>
         <div class="about__copy">
-          <p class="section-eyebrow">Atendimento próximo</p>
           <h2 id="atendimentoTitulo">Você fala com quem entende e executa o serviço</h2>
           <p>Da primeira mensagem à entrega do equipamento, o atendimento é direto com quem faz o serviço. A RN Informática possui estrutura técnica própria em Igarassu e também realiza visitas na região.</p>
           <p>Antes do reparo, você recebe a avaliação e o orçamento. Se ainda não sabe qual serviço precisa, pode começar contando o problema pelo WhatsApp.</p>
@@ -1133,7 +1132,10 @@
           <button type="button" data-help="prazo" aria-controls="helpAnswer" aria-pressed="false">Quanto custa e qual o prazo?</button>
           <button type="button" data-help="gamer" aria-controls="helpAnswer" aria-pressed="false">Posso levar minhas peças?</button>
         </div>
-        <p class="help-answer" id="helpAnswer" role="status" aria-live="polite" hidden></p>
+        <div class="help-answer" id="helpAnswer" role="status" aria-live="polite" hidden>
+          <p class="help-answer__text" id="helpAnswerText"></p>
+          <button type="button" class="help-answer__close" id="helpAnswerClose" aria-label="Fechar resposta">×</button>
+        </div>
         <a class="btn btn--primary btn--full" id="helpWhatsapp" href="https://wa.me/5581987289955?text=Ol%C3%A1%2C%20Robson!%20Tenho%20uma%20d%C3%BAvida%20sobre%20um%20servi%C3%A7o." target="_blank" rel="noopener noreferrer">Falar com Robson no WhatsApp</a>
         <a class="help-more" href="#duvidas">Ver todas as perguntas</a>
       </div>

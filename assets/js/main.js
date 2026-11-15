@@ -329,8 +329,12 @@
     const painel = document.getElementById("helpPanel");
     const fechar = document.getElementById("helpClose");
     const resposta = document.getElementById("helpAnswer");
+    const textoResposta = document.getElementById("helpAnswerText");
+    const fecharResposta = document.getElementById("helpAnswerClose");
     const contato = document.getElementById("helpWhatsapp");
     if (!botao || !painel || !fechar || !resposta || !contato) return;
+
+    const linkPadraoWhatsApp = contato.href;
 
     // Respostas curtas ficam no próprio site para abrir instantaneamente.
     const respostas = {
@@ -343,20 +347,44 @@
       gamer:
         "Pode levar suas peças para a montagem do PC. Se ainda vai comprar, converse com o Robson para conferir a compatibilidade antes da compra.",
     };
+
+    const limparResposta = () => {
+      resposta.hidden = true;
+      if (textoResposta) textoResposta.textContent = "";
+      else resposta.textContent = "";
+      painel
+        .querySelectorAll("[data-help]")
+        .forEach((item) => item.setAttribute("aria-pressed", "false"));
+      contato.href = linkPadraoWhatsApp;
+    };
+
     // O parâmetro devolverFoco evita saltos quando o painel fecha por link externo.
     const definirAberto = (aberto, devolverFoco = true) => {
       painel.hidden = !aberto;
       botao.setAttribute("aria-expanded", String(aberto));
+      if (!aberto) limparResposta();
       if (aberto) fechar.focus();
       else if (devolverFoco) botao.focus();
     };
     botao.hidden = false;
     botao.addEventListener("click", () => definirAberto(painel.hidden));
     fechar.addEventListener("click", () => definirAberto(false));
+    if (fecharResposta) {
+      fecharResposta.addEventListener("click", () => limparResposta());
+    }
     painel.querySelectorAll("[data-help]").forEach((pergunta) => {
       pergunta.addEventListener("click", () => {
+        const jaSelecionada = pergunta.getAttribute("aria-pressed") === "true";
+        if (jaSelecionada && !resposta.hidden) {
+          limparResposta();
+          return;
+        }
         resposta.hidden = false;
-        resposta.textContent = respostas[pergunta.dataset.help];
+        if (textoResposta) {
+          textoResposta.textContent = respostas[pergunta.dataset.help];
+        } else {
+          resposta.textContent = respostas[pergunta.dataset.help];
+        }
         painel
           .querySelectorAll("[data-help]")
           .forEach((item) =>

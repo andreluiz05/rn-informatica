@@ -79,7 +79,11 @@
 .help-questions { display: grid; gap: 8px; margin: 16px 0; }
 .help-questions button { min-height: 44px; text-align: left; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 5px; background: white; cursor: pointer; }
 .help-questions button:hover, .help-questions button[aria-pressed="true"] { border-color: var(--brand); color: var(--brand); }
-.help-answer { padding: 14px; margin-bottom: 16px; background: var(--bg-surface); border-left: 3px solid var(--brand); }
+.help-answer { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; padding: 12px 12px 12px 14px; margin-bottom: 16px; background: var(--bg-surface); border-left: 3px solid var(--brand); border-radius: 0 6px 6px 0; }
+.help-answer[hidden] { display: none; }
+.help-answer__text { margin: 0; flex: 1; line-height: 1.5; }
+.help-answer__close { flex-shrink: 0; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 4px; background: transparent; color: var(--ink-muted); font-size: 18px; line-height: 1; cursor: pointer; padding: 0; }
+.help-answer__close:hover { background: rgba(0, 0, 0, 0.06); color: var(--ink); }
 .help-panel .btn { font-size: 13px; padding: 10px; }
 .help-more { display: block; margin-top: 12px; text-align: center; text-decoration: underline; text-underline-offset: 3px; }
 
